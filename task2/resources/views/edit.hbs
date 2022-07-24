@@ -1,0 +1,26 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-5">
+    <form method="post">
+               <div class="mb-3">
+            <input class="form-control" name="name" placeholder="name" value="{{result.name}}">
+
+
+
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="accountIntialBalance" placeholder="accountIntialBalance" value="{{result.accountIntialBalance}}">
+        </div>
+
+
+        <div class="mb-3">
+            <input class="form-control" name="currentBalnce" placeholder="currentBalnce" value="{{result.currentBalnce}}">
+        </div>
+
+        <div class="mb-3">
+            <button class="btn btn-primary">edit Client</button>
+        </div>
+
+    </form>
+</section>
+{{>footer}}

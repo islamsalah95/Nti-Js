@@ -1,0 +1,53 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-5">
+    <div class="d-flex flex-row-reverse">
+        <a href="/add" class="btn btn-primary">Add New Client</a>
+    </div>
+    <div class="my-2">
+        {{#if isEmpty}}  
+        {{!-- {{#unless isEmpty}} 
+         {{else}} 
+        
+         {{/unless}} --}}
+            <div class="alert alert-danger">
+                No Clients Yet
+            </div>
+            {{else}}
+            <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>accountIntialBalance</th>
+                    <th>currentBalnce</th>
+
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each allClients}}
+                <tr>
+                    <td>{{this._id}}</td>
+                    <td>{{this.name}}</td>
+                    <td>{{this.accountIntialBalance}}</td>
+                    <td>{{this.currentBalnce}}</td>
+
+                    <td>
+                        <a href="/single/{{this._id}}" class="btn btn-success mx-2">show</a>
+                        <a href="/edit/{{this._id}}" class="btn btn-warning mx-2">edit</a>
+                        <a href="/delete/{{this._id}}" class="btn btn-danger mx-2">delete</a>
+                        <a href="/addAddr/{{this._id}}" class="btn btn-danger mx-2">withdraw</a>
+                        <a href="/addBalance/{{this._id}}" class="btn btn-danger mx-2">addBalance</a>
+
+
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        {{/if}}
+        
+    </div>
+</section>
+{{>footer}}

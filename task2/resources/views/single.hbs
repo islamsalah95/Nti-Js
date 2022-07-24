@@ -1,0 +1,58 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-5">
+    {{#unless result}}
+    <div class="alert alert-danger">No Clients with this id</div>
+    {{else}}
+    <h5>{{result._id}}</h5>
+    <h5>{{result.name}}</h5>
+  <h1>withdraw</h1>
+   <table class="table table-bordered">
+            <thead>
+                <th>id</th>
+                <th>withdraw</th>
+                <th>date</th>
+            </thead>
+            <tbody>
+                {{#each result.transactions.withdraw}}
+                <tr>
+                    <td>{{this._id}}</td>
+                    <td>{{this.withdraw}}</td>
+                    <td>{{this.transactionAt}}</td>
+
+                    <td>
+                        <a href="/delAddr/{{this._id}}" class="btn btn-danger"> delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    <h1>addBalance</h1>
+
+    <table class="table table-bordered">
+            <thead>
+                <th>id</th>
+                <th>addBalance</th>
+                <th>date</th>
+            </thead>
+            <tbody>
+                {{#each result.transactions.addBalance}}
+                <tr>
+                    <td>{{this._id}}</td>
+                    <td>{{this.addBalance}}</td>
+                    <td>{{this.addBalanceAdd}}</td>
+
+                    <td>
+                        <a href="/delAddrAddBalance/{{this._id}}" class="btn btn-danger"> delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+  
+    {{/unless}}
+
+
+
+</section>
+{{>footer}}

@@ -1,0 +1,21 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-5">
+    
+  
+{{#if error.message}}
+   <div class="alert alert-danger">{{error.message}}</div> 
+{{/if}}
+    
+    <form action="/addAddrLogicBalance/{{result._id}}" method="post">
+        <div class="mb-3">
+            <input class="form-control" name="addBalance" placeholder="addBalance">
+    
+
+        <div class="mb-3">
+            <button class="btn btn-primary">add addBalance</button>
+        </div>
+
+    </form>
+</section>
+{{>footer}}

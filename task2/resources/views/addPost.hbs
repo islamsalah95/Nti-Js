@@ -1,0 +1,51 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-5">
+   
+               {{#each error}}
+{{#if this.name}}
+   <div class="text text-danger">{{this.name}}</div> 
+{{/if}}
+
+{{#if this.accountIntialBalance}}
+   <div class="text text-danger">{{this.accountIntialBalance}}</div> 
+{{/if}}
+
+        {{#if this.currentBalnce}}
+   <div class="text text-danger">{{this.currentBalnce}}</div> 
+           {{/if}}
+
+
+
+       {{/each}}
+
+    <form method="post" action="/addLogic">
+        <div class="mb-3">
+            <input class="form-control" name="name" placeholder="name">
+
+
+
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="accountIntialBalance" placeholder="accountIntialBalance">
+        </div>
+
+
+        <div class="mb-3">
+            <input class="form-control" name="currentBalnce" placeholder="currentBalnce">
+        </div>
+
+
+
+        <div class="mb-3">
+            <button class="btn btn-primary">add Client</button>
+        </div>
+
+
+
+
+    </form>
+
+
+</section>
+{{>footer}}

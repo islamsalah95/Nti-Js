@@ -1,0 +1,24 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-5">
+    
+  
+{{#if error.message}}
+   <div class="alert alert-danger">{{error.message}}</div> 
+{{/if}}
+    
+    <form action="/addAddr/{{result._id}}" method="post">
+        <div class="mb-3">
+            <input class="form-control" name="withdraw" placeholder="withdraw">
+        {{!-- </div>
+                <div class="mb-3">
+            <input class="form-control" name="addBalance" placeholder="addBalance">
+        </div> --}}
+
+        <div class="mb-3">
+            <button class="btn btn-primary">add transaction</button>
+        </div>
+
+    </form>
+</section>
+{{>footer}}
