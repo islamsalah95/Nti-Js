@@ -4,6 +4,8 @@ const reservation = require("../controllers/reservation.controller")
 
 router.post("/appointment",auth, reservation.appointment)
 router.get("/getAllOrders",auth, reservation.getAllOrders)
+router.get("/getMyAppointment",doctors, reservation.getMyAppointment)
+
 
 
 

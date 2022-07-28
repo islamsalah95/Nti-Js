@@ -56,7 +56,6 @@ const userSchema = mongoose.Schema({
     description:{
         type:String,
         required: function(){ return this.type=="doctor"},
-        required:true,
         trim:true,
         minlength:2, 
     },

@@ -18,7 +18,7 @@ class Reservation{
          resGenerator(res, 200, clinicData, "success")
         
         } catch (error) {
-            resGenerator(res, 500, error, "err")
+            resGenerator(res, 500, error.message, "err")
         }
         
         }
@@ -41,7 +41,19 @@ class Reservation{
         
 
 
+            static getMyAppointment=async function(req,res){
 
+                try {
+                    
+                const userData=await reservationModel.find({DoctorId:req.user._id})
+                
+                 resGenerator(res, 200, userData, "success")
+                
+                } catch (error) {
+                    resGenerator(res, 500, error, "err")
+                }
+                
+                }
 
     }
 

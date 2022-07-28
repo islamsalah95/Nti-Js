@@ -39,7 +39,7 @@ const doctors = async(req, res, next)=>{
     try{
         const token = req.header("Authorization").replace("Bearer ", "")
         const user =await checkUser(token)
-        if(user.type != "doctors") throw new Error("you are not doctors")
+        if(user.type != "doctor") throw new Error("you are not doctors")
         req.user = user
         req.token = token
         // res.send(req.user)

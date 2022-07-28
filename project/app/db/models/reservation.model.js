@@ -23,12 +23,7 @@ const reservationSchema = mongoose.Schema({
     day:{
         type:String,
         required: true,
-        enum:['sun','tus']
-    },
-    hour:{
-        type:String,
-        required: true,
-        enum:['1','2','3','4','5']
+        enum:['sa','su','mo','we','th']
     },
     DoctorId:{
         type:mongoose.Schema.Types.ObjectId,
