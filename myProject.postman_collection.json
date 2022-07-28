@@ -1,0 +1,439 @@
+{
+	"info": {
+		"_postman_id": "674953c5-a3e8-4f29-b98d-b486ef9075c0",
+		"name": "myProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20305970"
+	},
+	"item": [
+		{
+			"name": "project",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \"name\":\"user\",\r\n    \"email\":\"otp123@gmail.com\",\r\n    \"password\":\"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adminAddDoctors",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUwZmFjNTFhNDAyZjYyMWZhMTFjOWYiLCJpYXQiOjE2NTg5MTE0NTN9.lBi83BMTB3OP-ZlYzN4lz0UPQq05EsA_OElOUi7993Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"name\":\"doctorteth\",\r\n    \"email\":\"doctorteth@gmail.com\",\r\n    \"type\":\"doctor\",\r\n    \"password\":\"123456789\",\r\n    \"depart\":\"doctor\",\r\n    \"VezeetaPrice\":200,\r\n    \"description\":\"doctor\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/adminAddDoctors",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"adminAddDoctors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adminAddClinic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUwZmFjNTFhNDAyZjYyMWZhMTFjOWYiLCJpYXQiOjE2NTg5MTE0NTN9.lBi83BMTB3OP-ZlYzN4lz0UPQq05EsA_OElOUi7993Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"name\":\"doctorteth\",\r\n    \"email\":\"doctorteth@gmail.com\",\r\n    \"type\":\"doctor\",\r\n    \"password\":\"123456789\",\r\n    \"depart\":\"doctor\",\r\n    \"VezeetaPrice\":200,\r\n    \"description\":\"doctor\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/adminAddDoctors",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"adminAddDoctors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllClinics",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUwZmFjNTFhNDAyZjYyMWZhMTFjOWYiLCJpYXQiOjE2NTg5MTE0NTN9.lBi83BMTB3OP-ZlYzN4lz0UPQq05EsA_OElOUi7993Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/clinic/getAllClinics",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"clinic",
+								"getAllClinics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllDoctors",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUwZmFjNTFhNDAyZjYyMWZhMTFjOWYiLCJpYXQiOjE2NTg5MTE0NTN9.lBi83BMTB3OP-ZlYzN4lz0UPQq05EsA_OElOUi7993Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/clinic/getAllClinics",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"clinic",
+								"getAllClinics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "appointment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUwZmFjNTFhNDAyZjYyMWZhMTFjOWYiLCJpYXQiOjE2NTg5MTE0NTN9.lBi83BMTB3OP-ZlYzN4lz0UPQq05EsA_OElOUi7993Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/clinic/getAllClinics",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"clinic",
+								"getAllClinics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllOrders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUwYzZhZWM5ZTFmODAzNTYyYTY5MjUiLCJpYXQiOjE2NTg5MDgyMjV9.J8YZVBzZ9x5dFaCunR12aMsHN5lYYAcNJBwQ9W1XucM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/reservation/getAllOrders",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"reservation",
+								"getAllOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showall",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/user/all?count=5&pageNumber=0&Authorization=bearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmRkMmY1MDZhMDU5YzkxM2Q2OTk1ZmYiLCJpYXQiOjE2NTg2NjI4OTV9.iVsAytGpwbortlREgeqTKigzErJ1AudscVpC1vE-DFU",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"all"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "5"
+								},
+								{
+									"key": "pageNumber",
+									"value": "0"
+								},
+								{
+									"key": "Authorization",
+									"value": "bearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmRkMmY1MDZhMDU5YzkxM2Q2OTk1ZmYiLCJpYXQiOjE2NTg2NjI4OTV9.iVsAytGpwbortlREgeqTKigzErJ1AudscVpC1vE-DFU"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "me",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/user/me?Authorization=bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmRkZDQ1MzczYmM0NDc2ZjA3MjE0NzUiLCJpYXQiOjE2NTg3MTcxNjV9.4QqKp90Y_pBg70nhDxVjJRO5hJOKQqoGF58TPORTqVU",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"me"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmRkZDQ1MzczYmM0NDc2ZjA3MjE0NzUiLCJpYXQiOjE2NTg3MTcxNjV9.4QqKp90Y_pBg70nhDxVjJRO5hJOKQqoGF58TPORTqVU"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"email\":\"otp@gmail.com\",\r\n    \"password\":\"123456789\",\r\n    \"otp\":\"ch2jel\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/activateAcc",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"activateAcc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"email\":\"otp@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/forget",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"forget"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editpass",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"email\":\"y61bct\",\r\n    \"password\":\"1234567898\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/updatePass",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"updatePass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUwYzEwYTZmODQxMTYyOTQ4ZWNhYWQiLCJpYXQiOjE2NTg4OTY2NzZ9.eXRvhhmb4P8WkoKZTLq9b1dkGIp4Vbfnx943-Hv-9Ew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/user/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
