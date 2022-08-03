@@ -1,22 +1,15 @@
 {
-  "name": "session5",
+  "name": "task2-yargs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon index",
-    "dev": "node index"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "hbs": "^4.2.0",
-    "install": "^0.13.0",
-    "mongodb": "^4.8.0",
-    "mongoose": "^6.4.5",
-    "validator": "^13.7.0"
+    "yargs": "^17.5.1"
   }
 }

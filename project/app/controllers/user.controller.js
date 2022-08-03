@@ -4,9 +4,31 @@ const {resGenerator} = require("../helpers/methods")
 const otpp=require("otp-generator")
 const nodemailer = require("nodemailer");
 const send = require("../helpers/email.helper")
+const stuffNationalIdModel = require("../db/models/stuffNationalId.model")
 
+
+
+//////////////////////////
+const express = require("express");
+const app = express();
+const path = require("path");
+const YOUR_DOMAIN = "http://localhost:3000";
+
+app.use(express.static(path.join(__dirname, "views")));
+
+// middleware
+app.use(express.json());
+////////////////////////
 
 class User{
+    
+    static stripe=async (req, res) => {
+   
+
+    }
+    
+    
+    
     static login=async function(req,res){
 
 
@@ -46,22 +68,41 @@ class User{
 
 static register=async function(req,res){
 
-try {
+    try {
+        let newUser=null    
+
+    const userData = await stuffNationalIdModel.findOne({NationalId:req.body.NationalId})
+if (!userData) {
+    const newUser=new userModel(req.body)
+    await newUser.save()
+}
+
+else {
     
-const userData=new userModel(req.body)
+    if(userData.type="nurse") {
+        const newUser=new userModel({...req.body,type:"nurse"})
+        await newUser.save()
+    } 
 
 
- await userData.save()
+    else{
+        const newUser=new userModel({...req.body,type:"doctor"})
+        await newUser.save()
+    } 
 
- resGenerator(res, 200, userData, "success")
 
-} catch (error) {
-    resGenerator(res, 500, error, "err")
 }
-
-
-
-}
+    
+    // const userData=new userModel(req.body)
+    // await userData.save()
+    
+     resGenerator(res, 200, newUser, "success")
+    
+    } catch (error) {
+        resGenerator(res, 500, error.message, "err")
+    }
+    
+    }
 
 
 
@@ -89,33 +130,39 @@ const userData=new userModel(req.body)
             const newOtp=otpp.generate(6, { upperCaseAlphabets: false, specialChars: false })
              userData.otp=newOtp
             ///////////////////////////////////////////////////////////
-            // var transport = nodemailer.createTransport({
-            //     host: "smtp.mailtrap.io",
-            //     port: 587 ,
-            //     auth: {
-            //       user:"d51653207306a0",
-            //       pass:"0d9ca46dfa6f34"
-            //     }
-            //   });
-              
             
-              
-            //   var mailOptions = {
-            //     from: '"Example Team" <from@ourProject.com>',
-            //     to: req.body.email,
-            //     subject:"otp",
-            //     text: newOtp,
-            //     html: newOtp,
-               
-            //   };
-              
-            //   transport.sendMail(mailOptions, (error, info) => {
-            //     if (error) {
-            //       return console.log(error);
-            //     }
-            //     console.log('Message sent: %s', info.messageId);
-            //   });
-            ////////////////////////////////////////////////////////////        
+const nodemailer = require("nodemailer");
+
+var transport = nodemailer.createTransport({
+    host: "smtp.mailtrap.io",
+    port: 587 ,
+    auth: {
+              user:"5d93b5af4dbd7c",
+             pass:"46cdcb987628a3"
+    }
+  });
+  
+
+  
+  var mailOptions = {
+    from: '"Example Team" <clinic@gmail.com>',
+    to: req.body.email,
+    subject: 'OTP',
+    text:`your otp : ${newOtp}`,
+    html: `your otp : ${newOtp}`,
+   
+  };
+  
+  transport.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.log(error);
+    }
+    console.log('Message sent: %s', info.messageId);
+  });
+
+
+            ////////////////////////////////////////////////////////////     
+
             userData.save()
 
             resGenerator(res, 200, userData, "success")

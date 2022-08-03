@@ -1,0 +1,16 @@
+1- make index page to show all users
+    users will be  in a table
+    each user has (id, name, phone, status=>boolean)
+        and buttons for edit, delete
+
+2- make add page for add(name(input), age(input), status(select)) then add buttons
+
+3- edit page contains all data of this user and ability for edit each field
+
+4- create javaScript file to select elements and create functions
+        1- drawtable function
+        2- add elements to that table
+        3- showUsers func
+        4- addUser function
+        5- delete func 
+        6- edit func

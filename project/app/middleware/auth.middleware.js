@@ -49,4 +49,21 @@ const doctors = async(req, res, next)=>{
         resGenerator(res, 500, e.message, "unauthorized doctors")
     }
 }
-module.exports={auth, authAdmin,doctors}
+
+
+const nurse = async(req, res, next)=>{
+    try{
+        const token = req.header("Authorization").replace("Bearer ", "")
+        const user =await checkUser(token)
+        if(user.type != "nurse") throw new Error("you are not nurse")
+        req.user = user
+        req.token = token
+        // res.send(req.user)
+        next()
+    }
+    catch(e){
+        resGenerator(res, 500, e.message, "unauthorized doctors")
+    }
+}
+
+module.exports={auth, authAdmin,doctors,nurse}

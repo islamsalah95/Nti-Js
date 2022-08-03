@@ -1,5 +1,5 @@
 const router = require("express").Router()
-const {auth, authAdmin,doctors} = require("../middleware/auth.middleware")
+const {auth, authAdmin,doctors,nurse} = require("../middleware/auth.middleware")
 const user = require("../controllers/user.controller")
 //const {auth, authAdmin} = require("../middleware/auth.middleware")
 router.post("/register", user.register)
@@ -13,9 +13,11 @@ router.put("/updatePass", user.updatePass)
 router.post("/logout", auth, user.logout)
 
 /////////////////////////admin//////////////////////////////
-router.post("/adminAddDoctors",authAdmin, user.adminAddDoctors)
+//router.post("/adminAddDoctors",authAdmin, user.adminAddDoctors)
 router.get("/getAllDoctors", user.getAllDoctors)
 ///////////////////////////doctor/////////////////////////////////
+
+router.post("/stripe", user.stripe)
 
 
 

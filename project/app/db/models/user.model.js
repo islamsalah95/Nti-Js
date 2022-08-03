@@ -35,7 +35,7 @@ const userSchema = mongoose.Schema({
         type:String,
         required:true,
         trim:true,
-        enum:["admin", "user","doctor"],
+        enum:["admin", "user","doctor","nurse"],
         default:"user",
         lowercase:true
     }, 
@@ -50,7 +50,6 @@ const userSchema = mongoose.Schema({
     VezeetaPrice:{
         type:Number,
         required: function(){ return this.type=="doctor"},
-        default:100,
         min:100,
     },
     description:{
@@ -58,6 +57,12 @@ const userSchema = mongoose.Schema({
         required: function(){ return this.type=="doctor"},
         trim:true,
         minlength:2, 
+    },
+    NationalId:{
+        type:Number,
+        trim:true,
+        minlength:14, 
+        maxlength:14
     },
    password:{
         type:String,

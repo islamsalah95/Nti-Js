@@ -41,7 +41,7 @@ class Reservation{
         
 
 
-            static getMyAppointment=async function(req,res){
+            static getMyAppointmentDR=async function(req,res){
 
                 try {
                     
@@ -55,6 +55,20 @@ class Reservation{
                 
                 }
 
+                
+                static getSinglePatient=async function(req,res){
+
+                    try {
+                        
+                    const userData=await reservationModel.find({UserId:req.user._id})
+                    
+                     resGenerator(res, 200, userData, "success")
+                    
+                    } catch (error) {
+                        resGenerator(res, 500, error, "err")
+                    }
+                    
+                    }
     }
 
 module.exports=Reservation
