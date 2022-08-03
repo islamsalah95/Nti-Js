@@ -99,8 +99,11 @@ userSchema.methods.toJson=function (){
 
 }
 
-userSchema.pre("save",async function(){
-this.password=await bcrypt.hash(this.password,12)
+
+userSchema.pre("save", async function(next){
+    if(this.isModified("password"))
+        this.password = await bcrypt.hash(this.password, 12)
+    next()
 })
 
 userSchema.statics.loginUser=async function(email,password){

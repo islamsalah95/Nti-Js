@@ -38,7 +38,7 @@ class User{
             const token = await userData.generateToken()
             resGenerator(res, 200, {user:userData, token}, "registered")
         }catch (error) {
-            resGenerator(res, 500, error, "err")
+            resGenerator(res, 500, error.message, error)
         }
         
         

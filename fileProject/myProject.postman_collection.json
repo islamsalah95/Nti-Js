@@ -10,13 +10,39 @@
 			"name": "project",
 			"item": [
 				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUwYzEwYTZmODQxMTYyOTQ4ZWNhYWQiLCJpYXQiOjE2NTg4OTY2NzZ9.eXRvhhmb4P8WkoKZTLq9b1dkGIp4Vbfnx943-Hv-9Ew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/user/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "register",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{    \"name\":\"user\",\r\n    \"email\":\"secondUser@gmail.com\",\r\n    \"password\":\"123456789\"\r\n}",
+							"raw": "{    \"name\":\"nurse\",\r\n    \"email\":\"nurse@gmail.com\",\r\n    \"password\":\"123456789\",\r\n    \"NationalId\":29504092201551\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -45,7 +71,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{    \r\n    \"email\":\"doctorteth@gmail.com\",\r\n    \"password\":\"123456789\"\r\n}",
+							"raw": "{    \r\n    \"email\":\"nurse@gmail.com\",\r\n    \"password\":\"123456789\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -62,32 +88,6 @@
 								"api",
 								"user",
 								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "logout",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUwYzEwYTZmODQxMTYyOTQ4ZWNhYWQiLCJpYXQiOjE2NTg4OTY2NzZ9.eXRvhhmb4P8WkoKZTLq9b1dkGIp4Vbfnx943-Hv-9Ew",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/api/user/logout",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"user",
-								"logout"
 							]
 						}
 					},
@@ -181,19 +181,19 @@
 					"response": []
 				},
 				{
-					"name": "adminAddDoctors",
+					"name": "appointment",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUwZmFjNTFhNDAyZjYyMWZhMTFjOWYiLCJpYXQiOjE2NTg5MTE0NTN9.lBi83BMTB3OP-ZlYzN4lz0UPQq05EsA_OElOUi7993Q",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUyNzdhZDA1OTBjYjBhMzMyYmQyZjQiLCJpYXQiOjE2NTkwMDkxMjR9.VSDvm9UhLEHZCTvFKAQ4YZJ-nRXCdWrkNbjbeXJt7X0",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \"name\":\"doctorteth\",\r\n    \"email\":\"doctorteth@gmail.com\",\r\n    \"type\":\"doctor\",\r\n    \"password\":\"123456789\",\r\n    \"depart\":\"doctor\",\r\n    \"VezeetaPrice\":200,\r\n    \"description\":\"doctor\"\r\n\r\n}",
+							"raw": "{\r\n    \"name\":\"dentist\",\r\n    \"day\":\"su\",\r\n    \"DoctorId\":\"62e20380f7deb80798e9fca9\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -201,15 +201,15 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/user/adminAddDoctors",
+							"raw": "localhost:3000/api/reservation/appointment",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"api",
-								"user",
-								"adminAddDoctors"
+								"reservation",
+								"appointment"
 							]
 						}
 					},
@@ -245,6 +245,114 @@
 								"api",
 								"clinic",
 								"adminAddClinic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNationalId",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUwZmFjNTFhNDAyZjYyMWZhMTFjOWYiLCJpYXQiOjE2NTg5MTE0NTN9.lBi83BMTB3OP-ZlYzN4lz0UPQq05EsA_OElOUi7993Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \"NationalId\":\"29504092201552\",\r\n    \"type\":\"nurse\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/stuffNationalId/addNationalId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"stuffNationalId",
+								"addNationalId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addPatientHistory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmU3MWFmOWM3OTRiNDcyM2IxY2RkM2QiLCJpYXQiOjE2NTkzMTI5NTd9.gVX1sN86khZAIQR0BVULFypOoDS1xM84HAyJQDWsXaI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n     \"medicineName\":\"profien\",\r\n     \"DoctorId\":\"62e20380f7deb80798e9fca9\",\r\n     \"day\":\"sa\",\r\n     \"patientId\":\"62e277ad0590cb0a332bd2f4\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/patientHistory/addPatientHistory",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patientHistory",
+								"addPatientHistory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSinglePatientHistory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmU3MWFmOWM3OTRiNDcyM2IxY2RkM2QiLCJpYXQiOjE2NTkzMTI5NTd9.gVX1sN86khZAIQR0BVULFypOoDS1xM84HAyJQDWsXaI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n     \"patientId\":\"62e277ad0590cb0a332bd2f4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/patientHistory/getSinglePatientHistory",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patientHistory",
+								"getSinglePatientHistory"
 							]
 						}
 					},
@@ -289,7 +397,7 @@
 					"response": []
 				},
 				{
-					"name": "getMyAppointment",
+					"name": "getMyAppointmentDR",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -312,7 +420,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/reservation/getMyAppointment",
+							"raw": "localhost:3000/api/reservation/getMyAppointmentDR",
 							"host": [
 								"localhost"
 							],
@@ -320,7 +428,45 @@
 							"path": [
 								"api",
 								"reservation",
-								"getMyAppointment"
+								"getMyAppointmentDR"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSinglePatient",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUyNzdhZDA1OTBjYjBhMzMyYmQyZjQiLCJpYXQiOjE2NTkwMDkxMjR9.VSDvm9UhLEHZCTvFKAQ4YZJ-nRXCdWrkNbjbeXJt7X0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/reservation/getSinglePatient",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"reservation",
+								"getSinglePatient"
 							]
 						}
 					},
@@ -360,41 +506,6 @@
 								"api",
 								"user",
 								"getAllDoctors"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "appointment",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUyNzdhZDA1OTBjYjBhMzMyYmQyZjQiLCJpYXQiOjE2NTkwMDkxMjR9.VSDvm9UhLEHZCTvFKAQ4YZJ-nRXCdWrkNbjbeXJt7X0",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"dentist\",\r\n    \"day\":\"su\",\r\n    \"DoctorId\":\"62e20380f7deb80798e9fca9\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:3000/api/reservation/appointment",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"reservation",
-								"appointment"
 							]
 						}
 					},
