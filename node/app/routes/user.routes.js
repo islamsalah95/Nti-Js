@@ -10,11 +10,13 @@ router.post("/forget", user.forget)
 // router.get("/all", authAdmin, user.allUsegetAllDoctorsrs)
 // router.get("/all/:id", authAdmin, user.singleDetails)
 router.put("/updatePass", user.updatePass)
-router.post("/logout", auth, user.logout)
-
+router.get("/logout", auth, user.logout)
+router.get("/me", auth, user.me)
 /////////////////////////admin//////////////////////////////
 //router.post("/adminAddDoctors",authAdmin, user.adminAddDoctors)
 router.get("/getAllDoctors", user.getAllDoctors)
+router.get("/getAllUsers", user.getAllUsers)
+
 ///////////////////////////doctor/////////////////////////////////
 
 router.post("/stripe", user.stripe)

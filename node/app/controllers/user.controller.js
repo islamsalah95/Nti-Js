@@ -27,6 +27,10 @@ class User{
 
     }
     
+
+    static me = async(req,res)=>resGenerator(res, 200, req.user, "data featched")
+    
+    
     
     
     static login=async function(req,res){
@@ -69,6 +73,8 @@ class User{
 static register=async function(req,res){
 
     try {
+       
+       
         let newUser=null    
 
     const userData = await stuffNationalIdModel.findOne({NationalId:req.body.NationalId})
@@ -77,21 +83,24 @@ if (!userData) {
     await newUser.save()
 }
 
-else {
     
-    if(userData.type="nurse") {
-        const newUser=new userModel({...req.body,type:"nurse"})
+else if(userData.type=="doctor") {
+    const newUser=new userModel({...req.body,type:"doctor",depart:userData.department,
+    VezeetaPrice:userData.VezeetaPrice,description:userData.description})
+    await newUser.save()
+} 
+
+
+else {
+        const newUser=new userModel({...req.body,type:"nurse",depart:userData.department
+        ,VezeetaPrice:userData.VezeetaPrice,description:userData.description})
         await newUser.save()
     } 
+   
+    
 
 
-    else{
-        const newUser=new userModel({...req.body,type:"doctor"})
-        await newUser.save()
-    } 
 
-
-}
     
     // const userData=new userModel(req.body)
     // await userData.save()
@@ -235,6 +244,22 @@ static adminAddDoctors=async function(req,res){
         }
         
         }
+ 
+        static getAllUsers=async function(req,res){
+
+            try {
+                
+            const userData=await userModel.find({type:"user"})
+            
+             resGenerator(res, 200, userData, "success")
+            
+            } catch (error) {
+                resGenerator(res, 500, error, "err")
+            }
+            
+            }
+
+        
     
     
 

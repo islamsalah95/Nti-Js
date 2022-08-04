@@ -15,15 +15,9 @@ const patientHistorySchema = mongoose.Schema({
         required:true,
         ref:"User"
     }, 
-    UserId:{
-        type:mongoose.Schema.Types.ObjectId,
-        required:true,
-        ref:"User"
-    }, 
-    day:{
-        type:String,
-        required: true,
-        enum:['sa','su','mo','we','th']
+    date:{
+    type:Date,
+    default:Date.now()
     },
     patientId:{
         type:mongoose.Schema.Types.ObjectId,
@@ -36,3 +30,4 @@ const patientHistorySchema = mongoose.Schema({
 
 const patientHistory = mongoose.model("PatientHistory", patientHistorySchema)
 module.exports=patientHistory
+

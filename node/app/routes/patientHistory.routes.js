@@ -4,7 +4,7 @@ const patientHistory = require("../controllers/patientHistory.controller")
 
 router.post("/addPatientHistory",nurse, patientHistory.addPatientHistory)
 //fetch /getAllOrders to get this 
-router.get("/getSinglePatientHistory",nurse, patientHistory.getSinglePatientHistory)
+router.get("/getSinglePatientHistory",doctors, patientHistory.getSinglePatientHistory)
 
 
 

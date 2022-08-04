@@ -28,7 +28,7 @@ class Reservation{
             try {
                 
             
-            const clinicData=await reservationModel.find({UserId:req.user._id})
+            const clinicData=await reservationModel.find()
            
             
              resGenerator(res, 200, clinicData, "success")

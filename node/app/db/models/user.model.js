@@ -51,12 +51,14 @@ const userSchema = mongoose.Schema({
         type:Number,
         required: function(){ return this.type=="doctor"},
         min:100,
+        default:100
     },
     description:{
         type:String,
         required: function(){ return this.type=="doctor"},
         trim:true,
         minlength:2, 
+        default:"public doctor"
     },
     NationalId:{
         type:Number,

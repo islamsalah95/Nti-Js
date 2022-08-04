@@ -17,7 +17,25 @@ const stuffNationalIdSchema = mongoose.Schema({
         enum:["admin","doctor","nurse"],
         lowercase:true
     }
-    
+    ,department:{
+        type:String,
+        required:true,
+        trim:true,
+        default:"public"
+    },
+    VezeetaPrice:{
+        type:Number,
+        required:true,
+        min:100,
+        default:100
+    },
+    description:{
+        type:String,
+        required:true,
+        trim:true,
+        minlength:2, 
+        default:"public doctor"
+    }
 })
 
 

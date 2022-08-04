@@ -25,6 +25,11 @@ const reservationSchema = mongoose.Schema({
         required: true,
         enum:['sa','su','mo','we','th']
     },
+    date:{
+        type:String,
+        date:Date.now()
+
+    },
     DoctorId:{
         type:mongoose.Schema.Types.ObjectId,
         required:true,
